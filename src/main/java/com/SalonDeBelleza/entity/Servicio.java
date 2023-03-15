@@ -1,5 +1,6 @@
 package com.SalonDeBelleza.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,20 +16,24 @@ import lombok.Data;
 @Table(name = "servicios")
 public class Servicio implements Serializable {
 
-    @Id //Indica el atributo como clave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Indica que el valor se generará automaticamente
-    private long idServicio;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_servicio")
+    private int idServicio;
 
+    @Column(name = "Nombre_servicio")
     private String nombreServicio;
-    private String precioServicio;
+
+    @Column(name = "Precio_servicio")
+    private double precioServicio;
+
+    @Column(name = "Descripcion_servicio")
     private String descripcionServicio;
-    private int idAdmin;
-    private int idUsuario;
-    
+
     @ManyToOne
     @JoinColumn(name = "ID_administrador")
     private Administrador administrador;
-    
+
     @ManyToOne
     @JoinColumn(name = "ID_usuario")
     private Usuario usuario;

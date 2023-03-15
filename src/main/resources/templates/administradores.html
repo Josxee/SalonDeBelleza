@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Administradores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1 th:text="${titulo}"></h1>
+        <table>
+            <thead>
+                <tr>                   
+                    <th>Nombre</th>                
+                    <th>Email</th>
+                    <th>Contraseña</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : ${administradores}">
+                <tr>
+                    <td th:text="${user.getNombreAdmin}"></td>
+                    <td th:text="${user.getEmailAdmin}"></td>
+                    <td th:text="${user.getContraAdmin}"></td>
+                    <td>                        
+                        <a th:href="@{/editAdmin/{id}(id=${user.getIdAdmin})}">Editar</a></td>
+                    <td>                        
+                        <a th:href="@{/delete/{id}(id=${user.getIdAdmin})}">Eliminar</a></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>

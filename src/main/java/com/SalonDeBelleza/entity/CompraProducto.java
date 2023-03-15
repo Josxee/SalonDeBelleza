@@ -1,5 +1,6 @@
 package com.SalonDeBelleza.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,26 +9,27 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.sql.Date;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "compras_de_productos")
-public class CompraProducto implements Serializable{
-    
-    @Id //Indica el atributo como clave primaria
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Indica que el valor se generará automaticamente
-    private long idCompraProducto;
+@Table(name = "Compras_de_productos")
+public class CompraProducto implements Serializable {
 
-    private String fechaCompraProducto;
-    private int idUsuario;
-    private int idServicio;
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID_compra_producto")
+    private int idCompraProducto;
+
+    @Column(name = "Fecha_compra")
+    private Date fechaCompra;
+
     @ManyToOne
     @JoinColumn(name = "ID_usuario")
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "ID_servicio")
-    private Servicio servicio;
+    @JoinColumn(name = "ID_producto")
+    private Producto producto;
 }
