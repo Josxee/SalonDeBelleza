@@ -17,7 +17,7 @@ public class Administrador implements Serializable {
     @Id //Indica el atributo como clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Indica que el valor se generará automáticamente
     @Column(name = "ID_administrador")
-    private long idAdmin;
+    private Long idAdmin;
 
     @Column(name = "Nombre_administrador")
     private String nombreAdmin;

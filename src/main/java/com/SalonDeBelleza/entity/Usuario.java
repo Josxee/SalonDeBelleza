@@ -1,5 +1,6 @@
 package com.SalonDeBelleza.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,9 +16,13 @@ public class Usuario implements Serializable{
     
     @Id //Indica el atributo como clave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Indica que el valor se generará automaticamente
-    private long idUsuario;
+    @Column(name = "ID_Usuario")
+    private Long idUsuario;
 
-    private String nameUsuario;
+    @Column(name = "Nombre_usuario")
+    private String nombreUsuario;
+    @Column(name = "Email_usuario")
     private String emailUsuario;
+    @Column(name = "Password_usuario")
     private String contraUsuario;
 }

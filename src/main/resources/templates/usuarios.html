@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"> 
     <head>
-        <title>Administradores</title>
+        <title>Usuarios</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-
+        
         <table>
             <thead>
                 <tr>                   
@@ -18,15 +18,15 @@
                 </tr>
             </thead>
             <tbody>
-            <th:block th:each="user : ${administradores}">
+            <th:block th:each="user : ${usuarios}">
                 <tr>
-                    <td th:text="${user.getNombreAdmin}"></td>
-                    <td th:text="${user.getEmailAdmin}"></td>
-                    <td th:text="${user.getContraAdmin}"></td>
+                    <td th:text="${user.getNombreUsuario}"></td>
+                    <td th:text="${user.getEmailUsuario}"></td>
+                    <td th:text="${user.getContraUsuario}"></td>
                     <td>                        
-                        <a th:href="@{/editAdmin/{id}(id=${user.getIdAdmin})}">Editar</a></td>
+                        <a th:href="@{/editUsuario/{id}(id=${user.getIdUsuario})}">Editar</a></td>
                     <td>                        
-                        <a th:href="@{/delete/{id}(id=${user.getIdAdmin})}">Eliminar</a></td>
+                        <a th:href="@{/deleteUsuario/{id}(id=${user.getIdUsuario})}">Eliminar</a></td>
                 </tr>
             </th:block>
         </tbody>
