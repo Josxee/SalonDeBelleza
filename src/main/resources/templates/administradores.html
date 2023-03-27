@@ -10,6 +10,9 @@
     </head>
     
     <body>
+        
+        <header th:replace="plantilla/template::header"></header>
+        <br>
         <h1 class="text-center" th:text="Administradores"></h1>
         <div class="col-auto bg-white p-3 text-center">
 
@@ -54,6 +57,8 @@
         <div class="col-auto bg-white p-1 text-center">
             <a class="btn btn-outline-dark" href="/adminN" role="button">Agregar administrador</a>
         </div>
+        <br>
+        <footer th:replace="plantilla/template::footer"></footer>
         
     </body>
 </html>

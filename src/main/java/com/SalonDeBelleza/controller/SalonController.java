@@ -23,6 +23,12 @@ public class SalonController {
     private IUsuarioService usuarioService;
 
     //CRUD ADMIN
+    
+    @GetMapping("/productos")
+    public String productos(Model model) {
+        return "Productos";
+    }
+    
     @GetMapping("/administrador")
     public String administradores(Model model) {
         List<Administrador> listaAdministradores = administradorService.getAllAdmins();

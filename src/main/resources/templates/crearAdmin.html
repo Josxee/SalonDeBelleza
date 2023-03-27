@@ -9,13 +9,16 @@
     </head>
 
     <body>
+
+        <header th:replace="plantilla/template::header"></header>
+
         <div class="container">
             <div class="card-body">
 
                 <div>
                     <h1 class="text-center">Crear Administrador</h1>
                     <br>
-                    
+
                     <!-- FORMULARIO -->
                     <div class="container">
                         <form th:object = "${admins}"
@@ -50,7 +53,7 @@
                                            id="apellido2" aria-describedby="emailHelp" required>                            
                                 </div>
                             </div>
-                            
+
                             <div class="col-auto text-center">
                                 <button type="submit" class="btn btn-success" value="Guardar">Submit</button>
                             </div>
@@ -58,5 +61,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
