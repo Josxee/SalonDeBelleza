@@ -1,0 +1,157 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 30, 2023, 2:49:58 PM
+    Author     : Arturo
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+.empleado img{
+  display: block;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+}
+.cara{
+    position: static;
+    display: inline-block;
+    border: 0;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px 0px #12100F;
+}
+.titulo{
+  background-image: url("fondo.jpg");
+  height: 500px;
+}
+.titulo h1{
+  white-space: nowrap;
+  text-align: center;
+  line-height: 500px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 100px;
+}
+.titulo2{
+  height: 100px;
+}
+.titulo2 h1{
+  text-align: center;
+  line-height: 125px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 50px;
+}
+hr{
+  border: 0;
+  height: 5px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #FEFCF8, rgba(0, 0, 0, 0));
+}
+.info{
+  text-align: center;
+  text-decoration: none;
+}
+.info h1{
+  font-weight: 200;
+  line-height: 1;
+}
+.info p{
+  line-height: 0.2;
+}
+.info button{
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 25px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 0.8;
+  background: #CDBBAF;
+  color: #FEFCF8;
+  box-shadow: 0 0 0 1px #FEFCF8 inset;
+}
+.info a{
+  text-decoration: none;
+  color: #FEFCF8;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #BFA18F;
+  color:white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+header {
+  background-color: #0D0D0D;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #D6D5C9;
+  text-decoration: none;
+}
+
+nav a:hover{
+  color: #8C141E;
+  text-decoration: none;
+}
+
+main {
+  background-color: #BFA18F;
+  padding: 20px;
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+article {
+  margin-bottom: 20px;
+
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: 400px;
+  width: 400px;
+  border-radius: 30px;
+}
+
+footer {
+  background-color: #0D0D0D;
+  color: #D6D5C9;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid white;
+}
