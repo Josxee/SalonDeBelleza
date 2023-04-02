@@ -1,9 +1,47 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : Feb 22, 2023, 12:25:52 AM
-    Author     : kevin
-*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
+.comentario {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/*.comentario .img*/
+.comentario .a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*.comentario .imagen img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}*/
+
+.comentario .contenido {
+    display: inline-block;
+}
+
+.comentario .fecha {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.comentario .titulo {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.comentario .descripcion {
+    text-align: justify;
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}

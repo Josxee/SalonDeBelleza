@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Comentarios 📃</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
+        <script src="js/bootstrap.min.js"></script>
+        <link href="css/comentarios.css" type="text/css" rel="stylesheet"> 
+
+    </head>
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        <h1 class="text-center">Lista de Comentarios</h1>
+        <br>
+
+        <div class="col-auto bg-white p-1 text-center">
+            <a class="btn btn-outline-dark" href="/crearComentario" role="button">Agregar Comentario</a>
+        </div>
+        <br>
+
+        <form>
+            <div class="form-group">
+                <div class="container">
+
+                    <div th:each="user : ${comentarios}" class="comentario">
+                        <div class="a">
+                            <a th:src="${user.getIdUsuario}">
+                        </div>
+                        <div class="contenido">
+                            <p class="fecha" th:text="${user.getFechaComentario}"></p>
+                            <p class="titulo" th:text="${user.getTituloComentario}"></p>
+                            <p class="descripcion" th:text="${user.getDescripcionComentario}"></p>
+
+                            <p class="clasificacion">
+                                <span th:if="${user.getCalificacionComentario() == 1}">⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 2}">⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 3}">⭐⭐⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 4}">⭐⭐⭐⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 5}">⭐⭐⭐⭐⭐⭐</span>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <footer th:replace="plantilla/template::footer"></footer>
+
+                </body>
+                </html>

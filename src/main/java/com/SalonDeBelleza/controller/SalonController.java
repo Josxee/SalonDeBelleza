@@ -1,9 +1,13 @@
 package com.SalonDeBelleza.controller;
 
 import com.SalonDeBelleza.entity.Administrador;
+import com.SalonDeBelleza.entity.Comentario;
 import com.SalonDeBelleza.entity.Usuario;
 import com.SalonDeBelleza.service.IAdministradorService;
+import com.SalonDeBelleza.service.IComentarioService;
 import com.SalonDeBelleza.service.IUsuarioService;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,14 +26,44 @@ public class SalonController {
     @Autowired
     private IUsuarioService usuarioService;
 
-    //CRUD ADMIN
-    
+    @Autowired
+    private IComentarioService comentarioService;
+
+    //Comentarios
+    @GetMapping("/comentarios")
+    public String comentarios(Model model) {
+        List<Comentario> listaComentarios = comentarioService.getAllComentarios();
+        model.addAttribute("comentarios", listaComentarios);
+        return "comentarios";
+    }
+
+    @GetMapping("/crearComentario")
+    public String crearComentario(Model model) {
+        model.addAttribute("comentario", new Comentario());
+        return "crearComentario";
+    }
+
+    @PostMapping("/guardarComentario")
+    public String guardarComentario(@ModelAttribute Comentario comentario) {
+        comentario.setCalificacionComentario(comentario.getCalificacionComentario());        
+        //
+        LocalDate fecha = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String fechaFormateada = fecha.format(formatter);
+        comentario.setFechaComentario(fechaFormateada);
+        //
+        comentarioService.saveComentario(comentario);
+        return "redirect:/comentarios";
+    }
+
+    //Productos
     @GetMapping("/productos")
     public String productos(Model model) {
         return "Productos";
     }
-    
-    @GetMapping("/administrador")
+
+    //CRUD ADMIN
+    @GetMapping("/administradores")
     public String administradores(Model model) {
         List<Administrador> listaAdministradores = administradorService.getAllAdmins();
         model.addAttribute("administradores", listaAdministradores);
@@ -62,7 +96,7 @@ public class SalonController {
     }
 
     //CRUD USER
-    @GetMapping("/usuario")
+    @GetMapping("/usuarios")
     public String usuarios(Model model) {
         List<Usuario> listaUsuarios = usuarioService.getAllUsuarios();
         model.addAttribute("usuarios", listaUsuarios);
