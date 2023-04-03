@@ -2,10 +2,16 @@ package com.SalonDeBelleza.controller;
 
 import com.SalonDeBelleza.entity.Administrador;
 import com.SalonDeBelleza.entity.Comentario;
+import com.SalonDeBelleza.entity.Producto;
 import com.SalonDeBelleza.entity.Usuario;
 import com.SalonDeBelleza.service.IAdministradorService;
 import com.SalonDeBelleza.service.IComentarioService;
+import com.SalonDeBelleza.service.IProductoService;
 import com.SalonDeBelleza.service.IUsuarioService;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -16,6 +22,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class SalonController {
@@ -28,6 +36,9 @@ public class SalonController {
 
     @Autowired
     private IComentarioService comentarioService;
+
+    @Autowired
+    private IProductoService productoService;
 
     //Comentarios
     @GetMapping("/comentarios")
@@ -45,7 +56,7 @@ public class SalonController {
 
     @PostMapping("/guardarComentario")
     public String guardarComentario(@ModelAttribute Comentario comentario) {
-        comentario.setCalificacionComentario(comentario.getCalificacionComentario());        
+        comentario.setCalificacionComentario(comentario.getCalificacionComentario());
         //
         LocalDate fecha = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -59,7 +70,56 @@ public class SalonController {
     //Productos
     @GetMapping("/productos")
     public String productos(Model model) {
+        List<Producto> listaProducto = productoService.getAllProductos();
+        model.addAttribute("productos", listaProducto);
         return "Productos";
+    }
+
+    @GetMapping("/productosNuevo")
+    public String crearProducto(Model model) {
+        model.addAttribute("products", new Producto());
+        return "Agregar_Producto";
+    }
+
+    @GetMapping("/productos/admin")
+    public String productosAdmin(Model model) {
+        List<Producto> listaProducto = productoService.getAllProductos();
+        model.addAttribute("productos", listaProducto);
+        return "Admin_Productos";
+    }
+
+    @PostMapping("/saveProducto")
+    public String guardarProducto(@ModelAttribute Producto producto,
+            @RequestParam("file") MultipartFile imagen) {
+
+        if (!imagen.isEmpty()) {
+            Path directorioImagenes = Paths.get("src//main//resources//static/images/producto");
+            String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+
+            try {
+                byte[] bytesImg = imagen.getBytes();
+                Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + imagen.getOriginalFilename());
+                Files.write(rutaCompleta, bytesImg);
+
+                producto.setImagenProducto("images/producto/" + imagen.getOriginalFilename());
+            } catch (IOException e) {
+            }
+        }
+        productoService.saveProducto(producto);
+        return "redirect:/productos";
+    }
+
+    @GetMapping("/deleteProducto/{idProducto}")
+    public String eliminarProducto(@PathVariable("idProducto") Long idProducto) {
+        productoService.delete(idProducto);
+        return "redirect:/productos/admin";
+    }
+
+    @GetMapping("/editProducto/{idProducto}")
+    public String editarProducto(@PathVariable("idProducto") Long idProducto, Model model) {
+        Producto producto = productoService.getProductoByID(idProducto);
+        model.addAttribute("products", producto);
+        return "Agregar_Producto";
     }
 
     //CRUD ADMIN
