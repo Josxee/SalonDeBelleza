@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+    <head>
+        <title>Servicios | Utopía Beauty Salón</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/Servicios.css">
+        <link rel="icon" href="/images/mujer-con-pelo-largo.ico"> <!-- Agregamos icono a la ventana del navegador -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    
+        
+    </head>
+    <body>
+
+        <!-- El header / encabezado -->
+        <header> 
+            <div class="navegacion">
+                <img src="images/logo-blanco.png" alt="Logo del salón"/>
+                <nav>
+                    <ul>
+                        <li><a class="logo2" href="carrito_prueba.html"><img src="/images/agregar-carrito.png" alt="Imagen Carrito"></a></li>
+                        <li><a href="InicioDeSesion.html">Login</a></li>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="Productos.html">Productos</a></li>
+                        <li><a href="Tienda.html">Tienda</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="Comentarios.html">Comentarios</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Finaliza Header -->
+
+        <!-- Inicia Servicios -->
+        <div class ="contenedor contenido-principal">
+            <main class="blog">
+                <h3>Nuestros Gran Servicios - Utopía Beauty Salón</h3>
+                <!-- Servicio 1 -->
+                <article class="entrada">
+                    <div class="entrada_imagen">
+                        <img src="images/Peinados.jpg" alt="Imagen de servicio"/>
+                    </div>
+                    <div class="entrada_contenido">
+                        <h4 class="no-margin">Servicio de peinado profesional en distintas áreas:</h4>
+                        <p>Nuestro servicio de peinado consiste en ofrecer diferentes técnicas de peinado para el cabello, con el objetivo de crear estilos y acabados personalizados para nuestros clientes. Algunas de las técnicas de peinado más comunes incluyen rizado, alisado, peinado con plancha, trenzado y recogidos. También incluimos el asesoramiento y recomendaciones para el cuidado del cabello, productos y herramientas de peinado. Nuestro equipo de estilistas altamente capacitados y con experiencia, se asegurará de que su cabello luzca hermoso y saludable después de cada sesión.</p>
+                        <a href="entrada.html" class="boton boton--primario">Leer entrada</a>
+                    </div>
+                </article>
+                <!-- Servicio 2 -->
+                <article class="entrada">
+                    <div class="entrada_imagen">
+                        <img src="images/Peinado.jpg" alt="Imagen de servicio"/>
+                    </div>
+                    <div class="entrada_contenido">
+                        <h4 class="no-margin">Servicio de coloración en distintas áreas:</h4>
+                        <p>Nuestro servicio de coloración de salón de belleza se enfoca en brindarle a nuestros clientes una experiencia personalizada y de alta calidad para transformar su cabello. Nuestros estilistas altamente capacitados utilizan técnicas de coloración avanzadas y productos de alta calidad para asegurarse de que cada tratamiento de color sea un éxito. Ofrecemos servicios de coloración básicos, mechas y reflejos, así como técnicas avanzadas como balayage y corrección de color.</p>
+                        <a href="entrada.html" class="boton boton--primario">Leer entrada</a>
+                    </div>
+                </article>
+                <!-- Servicio 3 -->
+                <article class="entrada">
+                    <div class="entrada_imagen">
+                        <img src="images/Uñas2.jpg" alt="Imagen de servicio"/>
+                    </div>
+                    <div class="entrada_contenido">
+                        <h4 class="no-margin">Beneficios del café</h4>
+                        <p>Nuestro servicio de uñas de salón de belleza se enfoca en brindarle a nuestros clientes una experiencia relajante y de alta calidad para mantener sus manos y pies saludables y con estilo. Ofrecemos servicios de manicura y pedicura básicos, así como técnicas avanzadas como uñas acrílicas, uñas de gel y esmalte semipermanente. Utilizamos productos de alta calidad y herramientas esterilizadas para garantizar la seguridad y la higiene de nuestros clientes.</p>
+                        <a href="entrada.html" class="boton boton--primario">Leer entrada</a>
+                    </div>
+                </article>
+            </main>
+
+            <!-- LINEA LATERAL -->
+            <aside class="sidebar">
+                <!-- Curso de peinado -->
+                <h3>Cursos de aprendizaje</h3>
+                <ul class="cursos no-padding" >
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Peinados básicos</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡120 000</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">50</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <br>
+                    <!-- Parte 2 peinados -->
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Peinado de novias</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡250 000</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">35</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <!-- Finaliza Servicio --> 
+                </ul>
+
+                <!-- CURSOS de coloración -->
+                <ul class="cursosN no-padding" >
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Curso coloración</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡350 000</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">10</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <!-- Parte 2 coloración -->
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Curso corrección de color</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡75 000</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">35</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <!-- Finaliza Servicio --> 
+                </ul>
+
+                <!-- Curso de uñas -->
+                <ul class="cursosN2 no-padding" >
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Diseño Profesional</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡199 995</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">12</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <br>
+                    <!-- Parte 2 Uñas -->
+                    <li class="widget-servicio">
+                        <h4 class="no-margin">Mantenimiento Uñas</h4>
+                        <p class="widget-servicio__label">Precio:
+                            <span class="widget-servicio__info">₡99 500</span>
+                        </p>
+                        <p class="widget-servicio__label">Cupo:
+                            <span class="widget-servicio__info">40</span>
+                        </p>
+                        <a href="entrada.html" class="boton boton--secundario">Más información</a>
+                    </li>
+                    <!-- Finaliza Servicio --> 
+                </ul>
+            </aside>
+        </div>
+    </body>
+</html>

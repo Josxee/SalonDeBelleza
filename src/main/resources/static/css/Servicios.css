@@ -1,0 +1,253 @@
+
+:root {
+    /**/
+    /*Declaramos variables de fuentes*/
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+        
+    /*Variables para colores*/
+    --primario: #784D3C;
+    --blanco:   #ffffff;
+    --negro:    #000000;
+    --gris:     #e1e1e1;
+}
+
+html{
+    /*Sirve para que el borde o padding no afecte el ancho de los elementos*/
+    box-sizing: border-box;
+    
+    /*Para que un "rem"=10px;*/
+    font-size: 62.5%; 
+}
+*,*:before,*:after{ /**/
+    /*Lo que hace inherit es heredar del elemento padre que es HTML*/
+    box-sizing: inherit;
+}
+
+body{
+    /*Declaramos una font-Family específica para el body"*/
+    font-family: var(--fuenteParrafos);
+    /*Definimos el tamaño*/
+    font-size: 1.6rem;
+    /*Definimos interlineado*/
+    line-height: 2;
+}
+
+.widget-servicio{
+    line-height: 1;
+}
+
+
+
+/*Globales*/
+.contenedor{
+    max-width: 180rem; /**/
+    width: 70%;
+    margin: 0 auto;/*Se centra el contenido horizontalmente*/
+}
+
+a{
+    text-decoration: none; /*Se quita interlineado*/
+}
+
+h1,h2,h3,h4{
+    /*Asignamos misma fuente*/
+    font-family: var (--fuenteHeading)
+}
+ /*Asignamos tamaño distintos*/
+ 
+ h1{
+     font-size: 4.8rem;
+ }
+ 
+ h2{
+     font-size: 4rem;
+ }
+ 
+ h3{
+     font-size: 3.2rem;
+ }
+ 
+ h3:last-of-type{
+     font-size: 2.8rem;
+    border-bottom: 2px solid var(--gris);
+ }
+ 
+ h4{
+     font-size: 2.8rem;
+ }
+ 
+ img {
+     /*Modificamos el tamaño de la imagen*/
+    width: 700px;
+    height: 400px;
+ }
+ 
+ .no-margin{
+     margin:0;
+ }
+ .no-padding{
+     padding:0;
+ }
+ .centrar-texto{
+     text-align: center;
+ }
+ 
+
+
+.navegacion {
+    background-color: #0D0D0D; /*Asignamos un fondo*/
+    align-items: center;
+    display: flex;
+
+}
+
+.navegacion nav{
+    display: inline-block;
+    position: relative;
+    left: 35%; /*Ajustamos los hiérvínculos a la derecha*/
+}
+
+.navegacion ul{
+    list-style-type: none;
+    margin: 0;
+}
+
+.navegacion li{
+    float: left;
+    padding: 20px 30px 20px 0;
+
+}
+
+.navegacion li a{
+    color: #ffffff; /* Asignamos color */
+    text-decoration: none; /* Borramos la linea de abajo*/
+    font-size: 20px; /* Ajustamos el tamaño de la letra */
+    font-weight:bold; /* Hacemos la letra negrita*/
+}
+
+.navegacion img{
+    padding: 10px 10px 10px 0;
+    width: 100px;
+    max-height: 100px;
+    display: inline-block;
+    position: relative;
+    left: 3%;
+}
+
+.navegacion ul li a img{
+    width: 30px;
+    margin-right: 30px;
+
+}
+.encabezado p{
+    margin-left: 30px;
+
+}
+
+footer .encabezado{
+    background-color: #D9A96B;
+    align-items: center;
+    display: flex;
+    padding-right: 5px;
+
+}
+
+footer .encabezado img{
+    padding: 20px 20px 20px 30px;
+    width: 30px;
+
+
+}
+
+footer li a{
+    color: #F2F2F2;
+    text-decoration: none;
+
+}
+
+footer ul {
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    margin-left: 300%;
+}
+
+/*AQUI FINALIZA EL HEADER AND FOOTER*/
+
+@media (min-width: 768px){
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+/*Modificamos los bordes de la entrada*/
+.entrada{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+/*Modificamos el ultimo borde
+  Para que no se vea el último*/
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+/*Modificamos los botones*/
+.boton{
+    display:block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px){
+    /*Toma el espacio que requiere,
+    pero si se pone margin o witdh si se respeta*/
+    .boton{
+        display: inline-block; 
+    }
+}
+.boton--primario{
+    background-color: var(--negro);
+}
+.boton--secundario{
+    background-color: var(--primario);
+}
+.cursos{
+    list-style: none;
+}
+
+.widget-servicio{
+    padding-bottom: 3rem;
+    border-bottom: 2px solid var(--negro);
+    margin-bottom: 2rem;
+}
+.widget-servicio:last-of-type{ /*Damos estilo al ultimo widget que encuentre*/
+    border:none;
+    margin-bottom: 0;
+}
+.widget-servicio__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-servicio__info{
+    font-weight: normal;
+}
+
+.cursosN{
+    margin-top: 34rem;
+    list-style: none;
+}
+.cursosN2{
+    margin-top: 31rem;
+    list-style: none;
+}
