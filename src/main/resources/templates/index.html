@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header th:replace="plantilla/template2::utils"></header>
+</head>
+<body>
+    <header th:replace="plantilla/template::header"></header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>¡Bienvenidos a nuestro salón de belleza!</h1>
+                <p>Aquí en nuestro salón nos enfocamos en hacer que nuestros clientes se sientan y se vean lo mejor posible. Ofrecemos una amplia variedad de servicios de belleza para satisfacer las necesidades de cada cliente.</p>
+                <button class="btn btn-primary">¡Agenda tu cita ahora!</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <h2>Servicios</h2>
+                <ul>
+                    <li>Cortes de cabello</li>
+                    <li>Tintes de cabello</li>
+                    <li>Peinados para eventos especiales</li>
+                    <li>Maquillaje para bodas</li>
+                    <li>Uñas acrílicas</li>
+                    <li>Masajes relajantes</li>
+                    <li>Y mucho más...</li>
+                </ul>
+                <button class="btn btn-primary">¡Solicita un servicio ahora!</button>
+            </div>
+            <div class="col-lg-8 col-md-6">
+                <h2>Artículos destacados</h2>
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Producto destacado 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto destacado 1</h5>
+                            <p class="card-text">Descripción del producto destacado 1.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Producto destacado 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto destacado 2</h5>
+                            <p class="card-text">Descripción del producto destacado 2.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Producto destacado 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto destacado 3</h5>
+                            <p class="card-text">Descripción del producto destacado 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Sucursales</h2>
+                <ul>
+                    <li>Sucursal 1: Dirección 1</li>
+                    <li>Sucursal 2: Dirección 2</li>
+                    <li>Sucursal 3: Dirección 3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <header th:replace="plantilla/template::footer"></header>
+    </footer>
+    
+</body>
+</html>

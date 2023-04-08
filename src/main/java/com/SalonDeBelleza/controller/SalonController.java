@@ -39,6 +39,11 @@ public class SalonController {
 
     @Autowired
     private IProductoService productoService;
+    
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
 
     //Comentarios
     @GetMapping("/comentarios")
@@ -65,6 +70,19 @@ public class SalonController {
         //
         comentarioService.saveComentario(comentario);
         return "redirect:/comentarios";
+    }
+
+    @GetMapping("/eliminarComentario/{idComentario}")
+    public String eliminarComentario(@PathVariable("idComentario") Long idComentario) {
+        comentarioService.delete(idComentario);
+        return "redirect:/comentarios";
+    }
+
+    @GetMapping("/editarComentario/{idComentario}")
+    public String editarComentario(@PathVariable("idComentario") Long idComentario, Model model) {
+        Comentario comentario = comentarioService.getComentarioByID(idComentario);
+        model.addAttribute("comentario", comentario);
+        return "crearComentario";
     }
 
     //Productos

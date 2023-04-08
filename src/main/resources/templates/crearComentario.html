@@ -2,75 +2,69 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Agregar Comentario</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
-        <script src="js/bootstrap.min.js"></script>
-        <link href="css/comentarios.css" type="text/css" rel="stylesheet"> 
-    </head>
+    <header th:replace="plantilla/template2::utils"></header>
+</head>
 
-    <body>
+<body>
+    <header th:replace="plantilla/template2::header"></header>
+    <div class="container">
+        <div class="card-body">
 
-        <header th:replace="plantilla/template::header"></header>
+            <div>
+                <h1 class="text-center">Comentario Nuevo</h1>
+                <br>
 
-        <div class="container">
-            <div class="card-body">
+                <!-- FORMULARIO -->
+                <form th:object = "${comentario}"
+                      th:action="@{/guardarComentario}"
+                      method="POST">
 
-                <div>
-                    <h1 class="text-center">Comentario Nuevo</h1>
-                    <br>
+                    <input type="hidden" th:field="*{idComentario}">
 
-                    <!-- FORMULARIO -->
-                    <form th:object = "${comentario}"
-                          th:action="@{/guardarComentario}"
-                          method="POST">
+                    <input type="hidden" name="fecha" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" />
 
-                        <input type="hidden" th:field="*{idComentario}">
+                    <label  class="col-md-2 col-form-label" for="tituloComentario">Titulo del comentario</label>
+                    <input type="text" class="form-control" th:field="*{tituloComentario}" placeholder="Titulo" required>
 
-                        <input type="hidden" name="fecha" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" />
+                    <label  class="col-md-2 col-form-label" for="descripcionComentario">Descripcion del comentario</label>
+                    <textarea class="form-control" rows="4" th:field="*{descripcionComentario}" placeholder="Escribir comentario..." required></textarea>
 
-                        <label  class="col-md-2 col-form-label" for="tituloComentario">Titulo del comentario</label>
-                        <input type="text" class="form-control" th:field="*{tituloComentario}" placeholder="Titulo">
+                    <div class="checkboxes">
 
-                        <label  class="col-md-2 col-form-label" for="descripcionComentario">Descripcion del comentario</label>
-                        <textarea class="form-control" rows="4" th:field="*{descripcionComentario}" placeholder="Escribir comentario..."></textarea>
+                        <label>
+                            <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="1" required>
+                            🌟
+                        </label>
+                        <label>
+                            <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="2" required >
+                            🌟🌟
+                        </label>
+                        <label>
+                            <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="3" required>
+                            🌟🌟🌟
+                        </label>
+                        <label>
+                            <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="4" required>
+                            🌟🌟🌟🌟
+                        </label>
+                        <label>
+                            <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="5" required>
+                            🌟🌟🌟🌟🌟
+                        </label>
 
-                        <div class="checkboxes">
+                    </div>
 
-                            <label>
-                                <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="1">
-                                🌟
-                            </label>
-                            <label>
-                                <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="2">
-                                🌟🌟
-                            </label>
-                            <label>
-                                <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="3">
-                                🌟🌟🌟
-                            </label>
-                            <label>
-                                <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="4">
-                                🌟🌟🌟🌟
-                            </label>
-                            <label>
-                                <input type="radio" name="calificacion" th:field="*{calificacionComentario}" value="5">
-                                🌟🌟🌟🌟🌟
-                            </label>
-                            
-                        </div>
+                    <div class="col-auto bg-white p-1 text-center">
+                        <button type="submit" class="btn btn-success" value="Guardar">Enviar comentario</button>
+                    </div>
+                </form>
 
-                        <div class="col-auto bg-white p-1 text-center">
-                            <button type="submit" class="btn btn-success" value="Guardar">Enviar comentario</button>
-                        </div>
-                    </form>
-
-                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <footer th:replace="plantilla/template::footer"></footer>
+<footer th:replace="plantilla/template::footer"></footer>
 
 </body>
 </html>

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Template</title>
+    <head th:fragment="utils">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="icons/font/bootstrap-icons.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../icons/font/bootstrap-icons.css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <script src="../js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -27,8 +26,8 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <a class="navbar-brand" href="/">
-                                <img class="img-fluid" src="images/logo-blanco.png" alt="Logo"/>
+                            <a class="navbar-brand" href="#">
+                                <img class="img-fluid" src="../images/logo-blanco.png" alt="Logo"/>
                             </a>
                         </div>
                     </div>
@@ -58,7 +57,7 @@
 
                             <div class="my-1">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                                 </li>
                             </div>
 

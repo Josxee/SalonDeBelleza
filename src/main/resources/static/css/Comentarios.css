@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
+.contenido{
+    position: relative;
+}
+
 .comentario {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -42,6 +46,10 @@
 }
 
 label {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+.container .a{
+    color: grey;
+    
 }

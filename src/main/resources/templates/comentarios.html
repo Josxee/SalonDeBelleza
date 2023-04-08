@@ -8,6 +8,7 @@
         <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
         <script src="js/bootstrap.min.js"></script>
         <link href="css/comentarios.css" type="text/css" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     </head>
     <body>
@@ -36,11 +37,12 @@
                             <p class="clasificacion">
                                 <span th:if="${user.getCalificacionComentario() == 1}">⭐</span>
                                 <span th:if="${user.getCalificacionComentario() == 2}">⭐⭐</span>
-                                <span th:if="${user.getCalificacionComentario() == 3}">⭐⭐⭐⭐</span>
-                                <span th:if="${user.getCalificacionComentario() == 4}">⭐⭐⭐⭐⭐</span>
-                                <span th:if="${user.getCalificacionComentario() == 5}">⭐⭐⭐⭐⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 3}">⭐⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 4}">⭐⭐⭐⭐</span>
+                                <span th:if="${user.getCalificacionComentario() == 5}">⭐⭐⭐⭐⭐</span>
                             </p>
-
+                            <a class="fas fa-edit float-right" th:href="@{/editarComentario/{id}(id=${user.IdComentario})}"></a>
+                            <a class="fas fa-trash float-right" th:href="@{/eliminarComentario/{id}(id=${user.IdComentario})}"></a>
                         </div>
                     </div>
                 </div>
