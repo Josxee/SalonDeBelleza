@@ -1,6 +1,12 @@
 CREATE DATABASE SalonDeBelleza;
 use SalonDeBelleza;
 
+CREATE TABLE faq(
+	ID_faq INT AUTO_INCREMENT PRIMARY KEY,
+    pregunta VARCHAR(500) NOT NULL,
+    descripcion VARCHAR(1000) NOT NULL
+);
+
 CREATE TABLE Administradores (
     ID_administrador INT AUTO_INCREMENT PRIMARY KEY,
     Nombre_administrador VARCHAR(50),
@@ -81,3 +87,8 @@ VALUES (1, 'Acondicionador',13500,'Acondicionador de la marca TRESemmé para cab
 	   (2, 'Ampolla btx',6000,'Ampolla de la marca btx, tratamiento recomendado para cabellos procesados quimicamente',20,'images/producto/ampolla.jpg'),
 	   (3, 'Aceite L´OREAL',9000,'Aceite de la marca L´OREAL de la linea ELVIVE, ayuda a dar luminosidad',7,'images/producto/gota.jpg'),
 	   (4, 'Shampoo Recamier',11500,'Shampoo sin sal de la marca Recamier de la linea vitane ADVANCE, accion anticaida',6,'images/producto/vitane.jpg');
+
+INSERT INTO faq (ID_faq,pregunta,descripcion)
+VALUES (1,' ¿Cada cuanto debo cortarme el cabello?','Nosotros recomendamos cortarse el cabello cada 3 meses'),
+       (2,' ¿Qué shampoo debo utilizar?','Nosotros recomendamos utilizar shampoo sin sal'),
+	   (3,' ¿Qué puedo hacer con mis primeras canas?','Nosotros recomendamos cortarse el cabello cada 3 meses');
