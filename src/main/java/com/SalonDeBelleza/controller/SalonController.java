@@ -39,9 +39,9 @@ public class SalonController {
 
     @Autowired
     private IProductoService productoService;
-    
+
     @GetMapping("/")
-    public String index(){
+    public String index() {
         return "index";
     }
 
@@ -140,6 +140,14 @@ public class SalonController {
         return "Agregar_Producto";
     }
 
+    //Detalle producto
+    @GetMapping("/detalleProducto/{idProducto}")
+    public String detalleProducto(@PathVariable("idProducto") Long idProducto, Model model) {
+        Producto producto = productoService.getProductoByID(idProducto);
+        model.addAttribute("products", producto);
+        return "Detalle_Producto";
+    }
+
     //CRUD ADMIN
     @GetMapping("/administradores")
     public String administradores(Model model) {
@@ -205,9 +213,10 @@ public class SalonController {
         model.addAttribute("users", usuario);
         return "crearUsuario";
     }
-   @GetMapping("/Faqs")
+
+    @GetMapping("/Faqs")
     public String FAQ(Model model) {
-      
+
         return "FAQ";
     }
 }
