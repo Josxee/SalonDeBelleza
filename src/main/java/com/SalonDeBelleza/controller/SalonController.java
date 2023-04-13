@@ -205,5 +205,9 @@ public class SalonController {
         model.addAttribute("users", usuario);
         return "crearUsuario";
     }
-
+   @GetMapping("/Faqs")
+    public String FAQ(Model model) {
+      
+        return "FAQ";
+    }
 }
