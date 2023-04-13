@@ -4,63 +4,63 @@
         <title>Crear Administrador</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <header th:replace="plantilla/template2::utils"></header>
-    </head>
+    <header th:replace="plantilla/template2::utils"></header>
+</head>
 
-    <body>
-        <header th:replace="plantilla/template2::header"></header>
+<body>
+    <header th:replace="plantilla/template2::header"></header>
 
-        <div class="container">
-            <div class="card-body">
+    <div class="container">
+        <div class="card-body">
 
-                <div>
-                    <h1 class="text-center">Crear Administrador</h1>
-                    <br>
+            <div>
+                <h1 class="text-center">Crear Administrador</h1>
+                <br>
 
-                    <!-- FORMULARIO -->
-                    <div class="container">
-                        <form th:object = "${admins}"
-                              th:action="@{/save}"
-                              method="POST"
-                              >
-                            <input type="hidden" th:field="*{idAdmin}">
+                <!-- FORMULARIO -->
+                <div class="container">
+                    <form th:object = "${admins}"
+                          th:action="@{/save}"
+                          method="POST"
+                          >
+                        <input type="hidden" th:field="*{idAdmin}">
 
-                            <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="nombreAdmin">Nombre</label>                            
-                                <div class="col-sm-10">                                
-                                    <input type="text" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{nombreAdmin}"  placeholder= "Nombre Administrador" 
-                                           id="nombres" aria-describedby="emailHelp" required>                            
-                                </div>
+                        <div class="form-group mb-3 row">
+                            <label  class="col-md-2 col-form-label" for="nombreAdmin">Nombre</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control form-control-sm col-md-6" 
+                                       th:field="*{nombreAdmin}"  placeholder= "Nombre Administrador" 
+                                       id="nombres" aria-describedby="emailHelp" required>                            
                             </div>
+                        </div>
 
-                            <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="emailAdmin">Email</label>                            
-                                <div class="col-sm-10">                                
-                                    <input type="text" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{emailAdmin}"  placeholder= "Correo Electronico" 
-                                           id="apellido1" aria-describedby="emailHelp" required>                            
-                                </div>
+                        <div class="form-group mb-3 row">
+                            <label  class="col-md-2 col-form-label" for="emailAdmin">Email</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control form-control-sm col-md-6" 
+                                       th:field="*{emailAdmin}"  placeholder= "Correo Electronico" 
+                                       id="apellido1" aria-describedby="emailHelp" required>                            
                             </div>
+                        </div>
 
-                            <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="contraAdmin">Contraseña</label>                            
-                                <div class="col-sm-10">                                
-                                    <input type="text" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{contraAdmin}"  placeholder= "Contraseña" 
-                                           id="apellido2" aria-describedby="emailHelp" required>                            
-                                </div>
+                        <div class="form-group mb-3 row">
+                            <label  class="col-md-2 col-form-label" for="contraAdmin">Contraseña</label>                            
+                            <div class="col-sm-10">                                
+                                <input type="text" class="form-control form-control-sm col-md-6" 
+                                       th:field="*{contraAdmin}"  placeholder= "Contraseña" 
+                                       id="apellido2" aria-describedby="emailHelp" required>                            
                             </div>
+                        </div>
 
-                            <div class="col-auto text-center">
-                                <button type="submit" class="btn btn-success" value="Guardar">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="col-auto text-center">
+                            <button type="submit" class="btn btn-success" value="Guardar">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <footer th:replace="plantilla/template::footer"></footer>
-    </body>
+    <footer th:replace="plantilla/template::footer"></footer>
+</body>
 </html>

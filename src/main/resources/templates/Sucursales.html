@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>Sucursales</title>
+        <link rel="stylesheet" href="src/main/resources/static/css/Sucursales.css> 
+
+              <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        <div class="titulo">
+            <h1>SUCURSALES</h1>
+        </div>
+        <main>
+            <article>
+                <figure>
+                    <img src="../images/Sucursal1.png" alt="Sucursal_1"> 
+                    <div class="info">
+                        <h1>ALAJUELA</h1>
+                        <p>Alajuela, Plaza Real Alajuela</p>
+                        <p>Telefono: 8802-9999</p>
+                        <button>
+                            <a href="/SucursalAlajuela.html">VER MÁS</a>
+                        </button>
+                    </div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="../images/Sucursal2.png" alt="Sucursal_2">
+                    <div class="info">
+                        <h1>FIDELITAS HEREDIA</h1>
+                        <p>La Aurora, Universidad Fidélitas Heredia</p>
+                        <p>Telefono: 8802-9999</p>
+                        <button>
+                            <a href="/SucursalFidelitasHeredia.html">VER MÁS</a>
+                        </button>
+                    </div>
+                </figure>
+            </article>
+            <article>
+                <figure>
+                    <img src="../images/Sucursal3.jpg" alt="Sucursal_3">
+                    <div class="info">
+                        <h1>LIMÓN</h1>
+                        <p>Limón, Puerto Viejo MultiCentro</p>
+                        <p>Telefono: 8802-9999</p>
+                        <button>
+                            <a href="/SucursalLimon.html">VER MÁS</a>
+                        </button>
+                    </div>
+                </figure>
+            </article>
+        </main>
+    </body>
+    <footer th:replace="plantilla/template::footer"></footer>
+</html>
+

@@ -3,15 +3,18 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
         <title>Registro</title>
+
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/Registro.css">
+
+        <link rel="stylesheet" href="src/main/resources/static/css/Registro.css">
     </head>
     <body>
+        <header th:replace="plantilla/template::header"></header>
         <div class="izquierda">
             <div style="height: 35%;"></div>
             <div class="caja">
@@ -50,5 +53,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </button>
             </form>
         </div>
+        <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>
