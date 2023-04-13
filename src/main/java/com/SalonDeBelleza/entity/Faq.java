@@ -18,9 +18,51 @@ import lombok.Data;
 public class Faq {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idFAQ; 
+    private int ID_faq; 
     private String pregunta;
     private String descripcion;
-           
+
+    /**
+     * @return the ID_faq
+     */
+    public int getID_faq() {
+        return ID_faq;
+    }
+
+    /**
+     * @param ID_faq the ID_faq to set
+     */
+    public void setID_faq(int ID_faq) {
+        this.ID_faq = ID_faq;
+    }
+
+    /**
+     * @return the pregunta
+     */
+    public String getPregunta() {
+        return pregunta;
+    }
+
+    /**
+     * @param pregunta the pregunta to set
+     */
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    /**
+     * @return the descripcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * @param descripcion the descripcion to set
+     */
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     
 }
