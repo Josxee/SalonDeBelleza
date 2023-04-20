@@ -8,6 +8,7 @@ import com.SalonDeBelleza.entity.Comentario;
 import com.SalonDeBelleza.entity.Faq;
 import com.SalonDeBelleza.repository.FaqRepository;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,26 +16,29 @@ import org.springframework.stereotype.Service;
  * @author María José
  */
 @Service
-public class FaqService implements IFaqService{
+public class FaqService implements IFaqService {
+
+    @Autowired
+    private FaqRepository faqRepository;
 
     @Override
     public List<Faq> getAllFaq() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (List<Faq>) faqRepository.findAll();
     }
 
     @Override
-    public Faq getFaqByID(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Faq getFaqByID(long ID_faq) {
+        return faqRepository.findById(ID_faq).orElse(null);
     }
 
     @Override
     public void saveFaq(Faq faq) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        faqRepository.save(faq);
     }
 
     @Override
-    public void delete(long id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void delete(long ID_faq) {
+        faqRepository.deleteById(ID_faq);
     }
 
 }

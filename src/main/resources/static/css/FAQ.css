@@ -10,7 +10,7 @@ body{
     color:#fff;
     
 }
-selection{
+/*selection{
     min-height: 100vh;
     width:80%;
     margin: 0 auto;
@@ -18,7 +18,7 @@ selection{
     flex-direction: column;
     align-items:center;
     
-}
+}*/
 .title{
     font-size: 3rem;
     margin:2rem 0rem;
@@ -31,19 +31,19 @@ selection{
     border-bottom: 2px solid #fff;
     cursor:pointer;
 }
-.preguntas{
+/*.preguntas{
     display:flex;
     justify-content: space-between;
     
-}
-.preguntas h3{
+}*/
+/*.preguntas h3{
     font-size: 1.8rem;
-}
-.respuesta p{
+}*/
+/*.respuesta p{
     padding-top:1rem;
     line-height: 1.6;
     font-size: 1.4rem;
-}
+}*/
 
 .titulo{
     text-align: center;

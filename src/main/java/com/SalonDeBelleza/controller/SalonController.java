@@ -2,10 +2,12 @@ package com.SalonDeBelleza.controller;
 
 import com.SalonDeBelleza.entity.Administrador;
 import com.SalonDeBelleza.entity.Comentario;
+import com.SalonDeBelleza.entity.Faq;
 import com.SalonDeBelleza.entity.Producto;
 import com.SalonDeBelleza.entity.Usuario;
 import com.SalonDeBelleza.service.IAdministradorService;
 import com.SalonDeBelleza.service.IComentarioService;
+import com.SalonDeBelleza.service.IFaqService;
 import com.SalonDeBelleza.service.IProductoService;
 import com.SalonDeBelleza.service.IUsuarioService;
 import java.io.IOException;
@@ -39,6 +41,9 @@ public class SalonController {
 
     @Autowired
     private IProductoService productoService;
+
+    @Autowired
+    private IFaqService faqService;
 
     @GetMapping("/")
     public String index() {
@@ -213,10 +218,49 @@ public class SalonController {
         model.addAttribute("users", usuario);
         return "crearUsuario";
     }
-
+//FAQS
     @GetMapping("/Faqs")
     public String FAQ(Model model) {
-
+        List<Faq> listaFaq = faqService.getAllFaq();
+        model.addAttribute("faq", listaFaq);
         return "FAQ";
     }
+    
+    
+
+    @GetMapping("/FaqNuevo")
+    public String crearFaq(Model model) {
+        model.addAttribute("faq", new Faq());
+        return "Agregar_Faq";
+    }
+
+    @GetMapping("/Faq/admin")
+    public String faqAdmin(Model model) {
+        List<Faq> listaFaq = faqService.getAllFaq();
+        model.addAttribute("faq", listaFaq);
+        return "Admin_Faq";
+    }
+
+    @PostMapping("/saveFaq")
+    public String guardarFaq(@ModelAttribute Faq faq) {
+
+     
+        faqService.saveFaq(faq);
+        return "redirect:/Faqs";
+    }
+
+
+    @GetMapping("/deleteFaq/{ID_faq}")
+    public String eliminarFaq(@PathVariable("ID_faq") Long ID_faq) {
+        faqService.delete(ID_faq);
+       return "redirect:/Faq/admin";
+   }
+
+
+    @GetMapping("/editFaq/{ID_faq}")
+   public String editarFaq(@PathVariable("ID_faq") Long ID_faq, Model model) {
+     Faq faq= faqService.getFaqByID(ID_faq);
+      model.addAttribute("faq", faq);
+     return "Agregar_Faq";
+ }
 }

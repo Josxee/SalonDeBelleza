@@ -1,6 +1,6 @@
 package com.SalonDeBelleza.service;
 
-import com.SalonDeBelleza.entity.Comentario;
+
 import com.SalonDeBelleza.entity.Faq;
 import java.util.List;
 
@@ -12,9 +12,9 @@ public interface IFaqService {
 
     public List<Faq> getAllFaq();
 
-    public Faq getFaqByID(long id);
+    public Faq getFaqByID(long ID_faq);
 
     public void saveFaq(Faq faq);
 
-    public void delete(long id);
+    public void delete(long ID_faq);
 }

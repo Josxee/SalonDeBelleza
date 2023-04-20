@@ -18,21 +18,21 @@ import lombok.Data;
 public class Faq {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_faq; 
+    private long ID_faq; 
     private String pregunta;
     private String descripcion;
 
     /**
      * @return the ID_faq
      */
-    public int getID_faq() {
+    public long getID_faq() {
         return ID_faq;
     }
 
     /**
      * @param ID_faq the ID_faq to set
      */
-    public void setID_faq(int ID_faq) {
+    public void setID_faq(long ID_faq) {
         this.ID_faq = ID_faq;
     }
 
@@ -63,6 +63,9 @@ public class Faq {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+
+
 
     
 }
