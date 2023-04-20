@@ -170,13 +170,13 @@ public class SalonController {
     @PostMapping("/save")
     public String guardarAdmin(@ModelAttribute Administrador administrador) {
         administradorService.saveAdmin(administrador);
-        return "redirect:/administrador";
+        return "redirect:/administradores";
     }
 
     @GetMapping("/delete/{idAdmin}")
     public String eliminarAdmin(@PathVariable("idAdmin") Long idAdmin) {
         administradorService.delete(idAdmin);
-        return "redirect:/administrador";
+        return "redirect:/administradores";
     }
 
     @GetMapping("/editAdmin/{idAdmin}")
@@ -203,13 +203,13 @@ public class SalonController {
     @PostMapping("/saveUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario) {
         usuarioService.saveUsuario(usuario);
-        return "redirect:/usuario";
+        return "redirect:/usuarios";
     }
 
     @GetMapping("/deleteUsuario/{idUsuario}")
     public String eliminarUsuario(@PathVariable("idUsuario") Long idUsuario) {
         usuarioService.delete(idUsuario);
-        return "redirect:/usuario";
+        return "redirect:/usuarios";
     }
 
     @GetMapping("/editUsuario/{idUsuario}")
@@ -218,15 +218,14 @@ public class SalonController {
         model.addAttribute("users", usuario);
         return "crearUsuario";
     }
-//FAQS
+
+    //FAQS
     @GetMapping("/Faqs")
     public String FAQ(Model model) {
         List<Faq> listaFaq = faqService.getAllFaq();
         model.addAttribute("faq", listaFaq);
         return "FAQ";
     }
-    
-    
 
     @GetMapping("/FaqNuevo")
     public String crearFaq(Model model) {
@@ -243,24 +242,20 @@ public class SalonController {
 
     @PostMapping("/saveFaq")
     public String guardarFaq(@ModelAttribute Faq faq) {
-
-     
         faqService.saveFaq(faq);
         return "redirect:/Faqs";
     }
 
-
     @GetMapping("/deleteFaq/{ID_faq}")
     public String eliminarFaq(@PathVariable("ID_faq") Long ID_faq) {
         faqService.delete(ID_faq);
-       return "redirect:/Faq/admin";
-   }
-
+        return "redirect:/Faq/admin";
+    }
 
     @GetMapping("/editFaq/{ID_faq}")
-   public String editarFaq(@PathVariable("ID_faq") Long ID_faq, Model model) {
-     Faq faq= faqService.getFaqByID(ID_faq);
-      model.addAttribute("faq", faq);
-     return "Agregar_Faq";
- }
+    public String editarFaq(@PathVariable("ID_faq") Long ID_faq, Model model) {
+        Faq faq = faqService.getFaqByID(ID_faq);
+        model.addAttribute("faq", faq);
+        return "Agregar_Faq";
+    }
 }
