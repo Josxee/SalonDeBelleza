@@ -35,7 +35,7 @@
                                 </table>
                                 <div class="d-flex justify-content-between aling-items-center">
                                     <div class="btn-group">
-                                        <a th:href="@{/detalleProducto/{id}(id=${products.getIdProducto})}" class="btn btn-primary">Detalles</a>
+                                        <a th:href="@{/detalleProducto{id}(id=${products.getIdProducto})}" class="btn btn-primary">Detalles</a>
                                     </div>
                                     <a href="" class="btn btn-success">Agregar</a>
                                 </div>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/productos/admin" role="button">Tabla de productos</a>
+                <a class="btn btn-outline-dark" href="/productosAdmin" role="button">Tabla de productos</a>
             </div>
         </div>
 

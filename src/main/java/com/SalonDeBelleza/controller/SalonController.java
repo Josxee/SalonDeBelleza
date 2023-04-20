@@ -104,7 +104,7 @@ public class SalonController {
         return "Agregar_Producto";
     }
 
-    @GetMapping("/productos/admin")
+    @GetMapping("/productosAdmin")
     public String productosAdmin(Model model) {
         List<Producto> listaProducto = productoService.getAllProductos();
         model.addAttribute("productos", listaProducto);
@@ -146,7 +146,7 @@ public class SalonController {
     }
 
     //Detalle producto
-    @GetMapping("/detalleProducto/{idProducto}")
+    @GetMapping("/detalleProducto{idProducto}")
     public String detalleProducto(@PathVariable("idProducto") Long idProducto, Model model) {
         Producto producto = productoService.getProductoByID(idProducto);
         model.addAttribute("products", producto);
@@ -233,7 +233,7 @@ public class SalonController {
         return "Agregar_Faq";
     }
 
-    @GetMapping("/Faq/admin")
+    @GetMapping("/FaqAdmin")
     public String faqAdmin(Model model) {
         List<Faq> listaFaq = faqService.getAllFaq();
         model.addAttribute("faq", listaFaq);

@@ -1,9 +1,10 @@
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
 
 /**/
+/*
 .navegacion {
-    background-color: #0D0D0D; /*Asignamos un fondo*/
+    background-color: #0D0D0D; /*Asignamos un fondo
     align-items: center;
     display: flex;
 
@@ -12,7 +13,7 @@
 .navegacion nav{
     display: inline-block;
     position: relative;
-    left: 35%; /*Ajustamos los hiérvínculos a la derecha*/
+    left: 35%; /*Ajustamos los hiérvínculos a la derecha
 }
 
 .navegacion ul{
@@ -27,10 +28,10 @@
 }
 
 .navegacion li a{
-    color: #ffffff; /* Asignamos color */
-    text-decoration: none; /* Borramos la linea de abajo*/
-    font-size: 20px; /* Ajustamos el tamaño de la letra */
-    font-weight:bold; /* Hacemos la letra negrita*/
+    color: #ffffff; /* Asignamos color 
+    text-decoration: none; /* Borramos la linea de abajo
+    font-size: 20px; /* Ajustamos el tamaño de la letra 
+    font-weight:bold; /* Hacemos la letra negrita
 }
 
 .navegacion img{
@@ -93,5 +94,5 @@ footer ul {
     display: flex;
     margin-left: 300%;
 
-}
+}*/
 
