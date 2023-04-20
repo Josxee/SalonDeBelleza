@@ -13,11 +13,11 @@
     </head>
     <body>
         <header th:replace="plantilla/template::header"></header>
-        <h1 class="text-center">Lista de Comentarios</h1>
+        <h1 th:text="#{comentarios.titulo}" class="text-center">Lista de Comentarios</h1>
         <br>
 
         <div class="col-auto bg-white p-1 text-center">
-            <a class="btn btn-outline-dark" href="/crearComentario" role="button">Agregar Comentario</a>
+            <a th:text="#{comentarios.boton} class="btn btn-outline-dark" href="/crearComentario" role="button">Agregar Comentario</a>
         </div>
         <br>
 

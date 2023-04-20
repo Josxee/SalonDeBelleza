@@ -11,7 +11,7 @@
         <div class="card-body">
 
             <div>
-                <h1 class="text-center">Comentario Nuevo</h1>
+                <h1 th:text="#{comentariosC.titulo}" class="text-center">Comentario Nuevo</h1>
                 <br>
 
                 <!-- FORMULARIO -->
@@ -23,10 +23,10 @@
 
                     <input type="hidden" name="fecha" th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}" />
 
-                    <label  class="col-md-2 col-form-label" for="tituloComentario">Titulo del comentario</label>
+                    <label th:text="#{comentariosC.tituloInput1}" class="col-md-2 col-form-label" for="tituloComentario">Titulo del comentario</label>
                     <input type="text" class="form-control" th:field="*{tituloComentario}" placeholder="Titulo" required>
 
-                    <label  class="col-md-2 col-form-label" for="descripcionComentario">Descripcion del comentario</label>
+                    <label th:text="#{comentariosC.tituloInput2}" class="col-md-2 col-form-label" for="descripcionComentario">Descripcion del comentario</label>
                     <textarea class="form-control" rows="4" th:field="*{descripcionComentario}" placeholder="Escribir comentario..." required></textarea>
 
                     <div class="checkboxes">
@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="col-auto bg-white p-1 text-center">
-                        <button type="submit" class="btn btn-success" value="Guardar">Enviar comentario</button>
+                        <button th:text="#{comentariosC.boton}" type="submit" class="btn btn-success" value="Guardar">Enviar comentario</button>
                     </div>
                 </form>
 
