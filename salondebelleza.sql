@@ -1,3 +1,4 @@
+DROP DATABASE SalonDeBelleza;
 CREATE DATABASE SalonDeBelleza;
 use SalonDeBelleza;
 
@@ -17,8 +18,9 @@ CREATE TABLE Administradores (
 CREATE TABLE Usuarios (
     ID_usuario INT AUTO_INCREMENT PRIMARY KEY,
     Nombre_usuario VARCHAR(50),
-    Email_usuario VARCHAR(50),
-    Password_usuario VARCHAR(50)
+    correo VARCHAR(255),
+    contra VARCHAR(255),
+	rol VARCHAR(255)
 );
 
 CREATE TABLE Servicios (
@@ -74,10 +76,8 @@ VALUES (1, 'Juan Perez', 'juanperez@gmail.com', 'contraseña1'),
        (2, 'María Rodriguez', 'mariarodriguez@gmail.com', 'contraseña2'),
        (3, 'Pedro Gómez', 'pedrogomez@gmail.com', 'contraseña3');
        
-INSERT INTO Usuarios(ID_usuario, Nombre_usuario, Email_usuario, Password_usuario) 
-VALUES (1, 'Juan Perez', 'juanperez@gmail.com', 'contraseña1'),
-       (2, 'María Rodriguez', 'mariarodriguez@gmail.com', 'contraseña2'),
-       (3, 'Pedro Gómez', 'pedrogomez@gmail.com', 'contraseña3');
+INSERT INTO Usuarios(ID_usuario, Nombre_usuario, correo, contra, rol) 
+VALUES (1, 'admin', 'a@a.com', '$2a$12$pF936XyaXSYBSzrXg1BRMOMnuTvPG9ZA4EzhDUxU0it53Q41xavvS', 'ADMIN');
 
 INSERT INTO Comentarios (ID_comentario, ID_usuario, Fecha_comentario, Titulo_comentario, Descripcion_comentario, Calificacion_comentario)
 VALUES(1, 1, '2023-03-01', "Titulo", "Descripcion", 5);
