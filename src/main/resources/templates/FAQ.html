@@ -22,16 +22,19 @@
                     <br>
                     <h1 class="titulo my-3">FAQ</h1>
                     <th:block th:each="faq : ${faq}">
-                        <div class="accordion " id="accordionExample">
+                        <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h2 clas="clearfix mb-0">
-                                        <a  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne"><h4 class="text-left"th:text="${faq.getPregunta}"></h4></a>
+                                        <a  class="btn btn-link" data-toggle="collapse" data-target="#collapse" 
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <h4 class="text-left" th:text="${faq.getPregunta}"></h4>
+                                        </a>
                                     </h2>
                                 </div>
-                                <div id="collapseOne"class="collapse"aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <div class="card-body"><p th:text="${faq.getDescripcion}"></p>
+                                <div id="collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p th:text="${faq.getDescripcion}"></p>
                                     </div>
                                 </div>
                             </div> 
@@ -47,7 +50,7 @@
             </div>
 
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/Faq/admin" role="button">Tabla de FAQ</a>
+                <a class="btn btn-outline-dark" href="/FaqAdmin" role="button">Tabla de FAQ</a>
             </div>
         </div>
         

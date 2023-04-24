@@ -184,11 +184,22 @@
             <!-- Grid container -->
 
             <!-- Copyright -->
-            <div class="text-center text-light p-2" style="background-color: #BFA18F;">
-                <p class="my-1">© 2023 Copyright: 
-                    <a class="text-light" style="text-decoration: none;" href="https://mdbootstrap.com/"> SalondeBelleza.com</a>
-                </p>
+            <div class="text-center text-light p-2 row" style="background-color: #BFA18F;"> 
+                
+                <div class="col text-start my-1">© 2023 Copyright: 
+                    <a class="text-light" style="text-decoration: none;" 
+                       href="/">SalondeBelleza.com</a>
+                </div>
 
+                <!-- Implementacion de i18n -->
+                <div class="col-auto text-end">
+                    <a class="" style="text-decoration: none; color: white;"
+                       th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                    <a class="" style="text-decoration: none; color: white;"
+                       th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+                </div>
             </div>
             <!-- Copyright -->
         </footer>
