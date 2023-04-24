@@ -32,4 +32,12 @@ public class ProductoService implements IProductoService {
         productoRepository.deleteById(id);
     }
 
+    @Override
+    public List<Producto> findByNombreProducto(String nombreProducto) {
+        if (nombreProducto != null) {
+            return (List<Producto>) productoRepository.findByNombreProducto(nombreProducto);
+        }
+        return (List<Producto>) productoRepository.findAll();
+    }
+
 }

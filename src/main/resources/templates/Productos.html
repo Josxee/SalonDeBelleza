@@ -23,21 +23,27 @@
                 <th:block th:each="products : ${productos}">
                     <div class="col-sm-4">
                         <div class="card shadow-sm">
-                            <img class="image" style="align-content: center" th:src="${products.getImagenProducto}">
+                            <img class="image img-fluid" 
+                                 style="align-content:
+                                 center; width: 45vh;
+                                 height: 45vh;" 
+                                 th:src="${products.getImagenProducto}">
                             <div class="card-body">
                                 <h5 th:text="${products.getNombreProducto}" class="card-title"></h5>
                                 <table style="margin-bottom: 2vh;">
                                     <tr>
-                                        <th style="font-weight: normal;">₡</th>
-                                        <th th:text="${products.getPrecioProducto}" class="card-textt"
+                                        <th th:text="'₡ ' + ${products.getPrecioProducto}" 
+                                            class="card-textt"
                                             style="font-weight: normal;"></th>
                                     </tr>
                                 </table>
                                 <div class="d-flex justify-content-between aling-items-center">
-                                    <div class="btn-group">
-                                        <a th:href="@{/detalleProducto{id}(id=${products.getIdProducto})}" class="btn btn-primary">Detalles</a>
-                                    </div>
-                                    <a href="" class="btn btn-success">Agregar</a>
+                                    
+                                        <a th:href="@{/detalleProducto{id}(id=${products.getIdProducto})}" 
+                                           class="btn btn-primary">Detalles</a>
+
+                                        <a href="" class="btn btn-success">Agregar</a>
+                                    
                                 </div>
                             </div>
                         </div>

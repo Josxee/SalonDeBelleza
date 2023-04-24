@@ -8,12 +8,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -36,10 +38,11 @@ public class ProductosController {
         return "Agregar_Producto";
     }
 
-    @GetMapping("/productosAdmin")
-    public String productosAdmin(Model model) {
-        List<Producto> listaProducto = productoService.getAllProductos();
+    @RequestMapping("/productosAdmin")
+    public String productosAdmin(Model model, @Param("nombreProducto") String nombreProducto) {
+        List<Producto> listaProducto = productoService.findByNombreProducto(nombreProducto);
         model.addAttribute("productos", listaProducto);
+        model.addAttribute("nombreProducto", nombreProducto);
         return "Admin_Productos";
     }
 
@@ -67,10 +70,10 @@ public class ProductosController {
     @GetMapping("/deleteProducto/{idProducto}")
     public String eliminarProducto(@PathVariable("idProducto") Long idProducto) {
         productoService.delete(idProducto);
-        return "redirect:/productos/admin";
+        return "redirect:/productosAdmin";
     }
 
-    @GetMapping("/editProducto/{idProducto}")
+    @GetMapping("/editProducto{idProducto}")
     public String editarProducto(@PathVariable("idProducto") Long idProducto, Model model) {
         Producto producto = productoService.getProductoByID(idProducto);
         model.addAttribute("products", producto);
