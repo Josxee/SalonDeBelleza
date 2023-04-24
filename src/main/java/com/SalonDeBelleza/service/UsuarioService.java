@@ -32,4 +32,9 @@ public class UsuarioService implements IUsuarioService {
         usuarioRepository.deleteById(id);
     }
 
+    @Override
+    public Usuario findByCorreo(String correo) {
+        return usuarioRepository.findByCorreo(correo);
+    }
+
 }

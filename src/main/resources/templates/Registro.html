@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="src/main/resources/static/css/Registro.css">
+        <link rel="stylesheet" href="/css/Registro.css">
     </head>
     <body>
         <header th:replace="plantilla/template::header"></header>
@@ -34,23 +34,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
         <div class="derecha">
             <div style="height: 15%;"></div>
-            <form>
+            <form th:action="@{/regUsuario}" th:object="${users}"
+                  method="POST" class="was-validated">
                 <div>
                     <h1>
                         Registrate aqui
                     </h1>
                 </div>
-                <label>Nombre completo:</label><br>
-                <input type="text"><br>
-                <label>Correo Electronico:</label><br>
-                <input type="text"><br>
-                <label>Contraseña:</label><br>
-                <input type="text"><br>
+                <label for="nombre">Nombre completo:</label><br>
+                <input name="nombreUsuario" type="text"><br>
+                <label for="email">Correo Electronico:</label><br>
+                <input name="correo" type="text"><br>
+                <label for="contra">Contraseña:</label><br>
+                <input name="contra" type="text"><br>
+                <label for="rol">Rol:</label><br>
+                <input name="rol" type="text"><br>
                 <input style="width:15px;height:13px;"type="checkbox">
                 <label style="font-size: 13px; ">Aceptar terminos y condiciones</label><br>
-                <button>
-                    <a href="Home.html">Registrarme</a>
-                </button>
+                <button class="btn btn-primary" type="submit">Registrarse</button>
             </form>
         </div>
         <footer th:replace="plantilla/template::footer"></footer>

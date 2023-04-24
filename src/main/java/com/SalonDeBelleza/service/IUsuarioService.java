@@ -8,4 +8,5 @@ public interface IUsuarioService {
     public Usuario getUsuarioByID(long id);
     public void saveUsuario(Usuario usuario);
     public void delete(long id);
+    Usuario findByCorreo(String username);
 }

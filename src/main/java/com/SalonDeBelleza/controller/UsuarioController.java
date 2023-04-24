@@ -4,6 +4,7 @@ import com.SalonDeBelleza.entity.Usuario;
 import com.SalonDeBelleza.service.IUsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,10 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UsuarioController {
-    
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     @Autowired
     private IUsuarioService usuarioService;
-    
+
     @GetMapping("/usuarios")
     public String usuarios(Model model) {
         List<Usuario> listaUsuarios = usuarioService.getAllUsuarios();
@@ -32,8 +36,20 @@ public class UsuarioController {
 
     @PostMapping("/saveUsuario")
     public String guardarUsuario(@ModelAttribute Usuario usuario) {
+        String passwordEncrypted = passwordEncoder.encode(usuario.getContra());
+        usuario.setContra(passwordEncrypted);
+
         usuarioService.saveUsuario(usuario);
         return "redirect:/usuarios";
+    }
+
+    @PostMapping("/regUsuario")
+    public String regUsuario(@ModelAttribute Usuario usuario) {
+        String passwordEncrypted = passwordEncoder.encode(usuario.getContra());
+        usuario.setContra(passwordEncrypted);
+
+        usuarioService.saveUsuario(usuario);
+        return "redirect:/login";
     }
 
     @GetMapping("/deleteUsuario/{idUsuario}")

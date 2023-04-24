@@ -22,6 +22,7 @@
                         <th scope="col">Nombre</th>                
                         <th scope="col">Email</th>
                         <th scope="col">Contraseña</th>
+                        <th scope="col">Rol</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Eliminar</th>
                     </tr>
@@ -31,8 +32,9 @@
                 <th:block th:each="user : ${usuarios}">
                     <tr>
                         <td th:text="${user.getNombreUsuario}"></td>
-                        <td th:text="${user.getEmailUsuario}"></td>
-                        <td th:text="${user.getContraUsuario}"></td>
+                        <td th:text="${user.getCorreo}"></td>
+                        <td th:text="${user.getContra}"></td>
+                        <td th:text="${user.getRol}"></td>
                         <td>                        
                             <a th:href="@{/editUsuario/{id}(id=${user.getIdUsuario})}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

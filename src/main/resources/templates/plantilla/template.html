@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
         <title>Template</title>
         <meta charset="UTF-8">
@@ -103,6 +104,19 @@
                                     <a class="nav-link active" aria-current="page" href="comentarios">Comentarios</a>
                                 </li>
                             </div>
+                            <style>
+                                #logout-link {
+                                    color: red;
+                                }
+                            </style>
+                            <div class="my-1">
+                                <li class="nav-item">
+                                    <form method="POST" th:action="@{/logout}" style="display:inline">
+                                        <a id="logout-link" class="nav-link active"  sec:authorize="isAuthenticated()" href="#" 
+                                           onclick="this.parentNode.submit();">Logout</a>
+                                    </form>
+                                </li>
+                            </div>
 
                         </ul> 
 
@@ -185,7 +199,7 @@
 
             <!-- Copyright -->
             <div class="text-center text-light p-2 row" style="background-color: #BFA18F;"> 
-                
+
                 <div class="col text-start my-1">© 2023 Copyright: 
                     <a class="text-light" style="text-decoration: none;" 
                        href="/">SalondeBelleza.com</a>
