@@ -4,7 +4,7 @@
         <title>Comentarios 📃</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="icons/font/bootstrap-icons.css">
+
         <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" >
         <script src="js/bootstrap.min.js"></script>
         <link href="css/comentarios.css" type="text/css" rel="stylesheet"> 
@@ -40,15 +40,12 @@
                                 <span th:if="${user.getCalificacionComentario() == 4}">⭐⭐⭐⭐</span>
                                 <span th:if="${user.getCalificacionComentario() == 5}">⭐⭐⭐⭐⭐</span>
                             </p>
-                            <a class="fas fa-edit float-right" th:href="@{/editarComentario/{id}(id=${user.IdComentario})}"></a>
-                            <a class="fas fa-trash float-right" th:href="@{/eliminarComentario/{id}(id=${user.IdComentario})}"></a>
+<!--                            <a class="fas fa-edit float-right" th:href="@{/editarComentario/{id}(id=${user.IdComentario})}"></a>
+                            <a class="fas fa-trash float-right" th:href="@{/eliminarComentario/{id}(id=${user.IdComentario})}"></a>-->
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+                <footer th:replace="plantilla/template::footer"></footer>
 
-        <footer th:replace="plantilla/template::footer"></footer>
-
-    </body>
-</html>
+                </body>
+                </html>

@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ComentariosController {
-    
+
     @Autowired
     private IComentarioService comentarioService;
-    
+
     @GetMapping("/comentarios")
     public String comentarios(Model model) {
         List<Comentario> listaComentarios = comentarioService.getAllComentarios();
@@ -56,5 +56,12 @@ public class ComentariosController {
         Comentario comentario = comentarioService.getComentarioByID(idComentario);
         model.addAttribute("comentario", comentario);
         return "crearComentario";
+    }
+
+    @GetMapping("/comentariosUsuario")
+    public String comentariosUsuario(Model model) {
+        List<Comentario> listaComentarios = comentarioService.getAllComentarios();
+        model.addAttribute("comentarios", listaComentarios);
+        return "comentariosUsuario";
     }
 }
