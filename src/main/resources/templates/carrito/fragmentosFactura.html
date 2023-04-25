@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="UTF-8">
+            <title>Factura</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                }
+                h1, h2, h3, h4, h5, h6 {
+                    margin: 0;
+                    padding: 0;
+                }
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+                th, td {
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                }
+                th {
+                    background-color: #eee;
+                }
+                .item-description {
+                    text-align: left;
+                }
+                .text-right {
+                    text-align: right;
+                }
+                .text-center {
+                    text-align: center;
+                }
+                .total {
+                    font-weight: bold;
+                }
+                .logo {
+                    display: inline-block;
+                    width: 150px;
+                    height: 150px;
+                    margin-right: 20px;
+                    background-image: url('https://via.placeholder.com/150');
+                    background-size: cover;
+                }
+                .company-info {
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: 16px;
+                }
+                .company-info h2 {
+                    font-size: 24px;
+                    margin-bottom: 10px;
+                }
+                .company-info p {
+                    margin: 0;
+                }
+            </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="logo"></div>
+            <div class="company-info">
+                <h2>Nombre de la empresa</h2>
+                <p>Dirección: 123 Calle Falsa</p>
+                <p>Teléfono: 555-555-5555</p>
+                <p>Correo electrónico: info@empresa.com</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item, contador : ${items}">
+                        <td>[[${contador.count}]]</td>
+                        <td>[[${item.descripcion}]]</td>
+                        <td class="text-end">[[${item.precio}]]</td>
+                        <td class="text-center">[[${item.cantidad}]]</td>
+                        <td class="text-center">[[${item.cantidad*item.precio}]]</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="total text-right">Total:</td>
+                        <td class="text-right" >[[${carritoTotal}]]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="/carrito/checkin" class="btn btn-primary">Volver a PokeStore</a>
+
+
+        </div>
+    </body>
+</html>

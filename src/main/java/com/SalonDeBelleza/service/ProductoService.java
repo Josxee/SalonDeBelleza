@@ -40,4 +40,9 @@ public class ProductoService implements IProductoService {
         return (List<Producto>) productoRepository.findAll();
     }
 
+    @Override
+    public Producto getArticulo(Producto articulo) {
+        return productoRepository.findById(articulo.getIdProducto()).orElse(null);
+    }
+
 }

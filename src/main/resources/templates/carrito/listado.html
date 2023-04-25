@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <header th:replace="plantilla/template2::utils"></header>
+    <head>    
+    </head>
+    <body>
+        <header th:replace="plantilla/template2::header"></header>
+
+        <section th:replace="~{carrito/fragmentosCarrito :: listadoCarrito}"/>
+
+        <footer>
+            <header th:replace="plantilla/template::footer"></header>
+        </footer>
+    </body>
+</html>

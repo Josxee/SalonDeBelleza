@@ -9,5 +9,7 @@ public interface IProductoService {
     public void saveProducto(Producto producto);
     public void delete(long id);
     
+    public Producto getArticulo(Producto articulo); 
+    
     public List<Producto> findByNombreProducto (String nombreProducto);
 }
