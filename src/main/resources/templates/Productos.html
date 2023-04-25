@@ -40,9 +40,9 @@
                                 <div class="d-flex justify-content-between aling-items-center">
                                     
                                         <a th:href="@{/detalleProducto{id}(id=${products.getIdProducto})}" 
-                                           class="btn btn-primary">Detalles</a>
+                                           class="btn btn-primary" th:text="#{producto.detalle}"></a>
 
-                                        <a href="" class="btn btn-success">Agregar</a>
+                                        <a href="" class="btn btn-success" th:text="#{producto.agregar}"></a>
                                     
                                 </div>
                             </div>
@@ -54,11 +54,13 @@
 
         <div class="m-0 row justify-content-center">
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/productosNuevo" role="button">Agregar producto</a>
+                <a class="btn btn-outline-dark" href="/productosNuevo" 
+                   role="button" th:text="#{producto.nuevo}"></a>
             </div>
 
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/productosAdmin" role="button">Tabla de productos</a>
+                <a class="btn btn-outline-dark" href="/productosAdmin" 
+                   role="button" th:text="#{producto.admin}"></a>
             </div>
         </div>
 

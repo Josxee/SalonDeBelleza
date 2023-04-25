@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class FAQController {
     
-    @Autowired
+    @Autowired  
     private IFaqService faqService;
     
     @GetMapping("/Faqs")
