@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Editar Proveedores</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">Control de Proveedores</a>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link"
+                    th:href="@{/estudiantes}">Proveedores</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                    <br>
+                    <h1 class="text-center">Editando la lista Proveedores</h1>
+                    <div class="card-body">
+                        <form th:action="@{/estudiantes/{id}(id=${estudiante.id})}" th:object="${estudiante}" method="POST">
+                            <div class="form-group">
+                                <label>Ingrese nombre del proveedor: </label>
+                                <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Digite el nombre del proveedor: " required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ingrese el número del proveedor: </label>
+                                <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Digite su apellido : " required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ingrese el correo electrónico del proveedor: </label>
+                                <input type="email" name="email" th:field="*{email}" class="form-control" placeholder="Digite su email : " required>
+                            </div>
+
+                            <div class="box-footer">
+                                <button class="btn btn-success">Guardar Proveedor</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
