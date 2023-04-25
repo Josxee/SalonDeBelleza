@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaft.org/extras/spring-security"> <!-- comment -->
     <head>
         <meta charset="utf-8">
         <title>Proveedores</title>
         <!-- CSS only -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <header th:replace="plantilla/template2::utils"></header> <!-- header -->
     </head>
     <body>
-
-
-
+        <header th:replace="plantilla/template::header"></header> <!-- header -->
+        
         <!-- ESTO NO ES UN HEADER -->
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <a class="navbar-brand" href="#">Control de la lista de proveedores</a>
@@ -29,7 +30,8 @@
             <br>
         <div class="row">
             <div class="col-lg-3">
-                <a th:href="@{/estudiantes/nuevo}" class="btn btn-success btn-sm mb3">Agregar Proveedor</a>
+                <!-- Agregar Botón -->
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/estudiantes/nuevo}" class="btn btn-success btn-sm mb3">Agregar Proveedor</a>
             </div>
         </div>
 
@@ -38,24 +40,27 @@
             <table class="table table-striped table-bordered">
                 <thead class="thead-dark">
                     <tr>
+                        <th>Id  </th>
                         <th>Proveedor</th>
                         <th>Contacto</th>
                         <th>Correo electrónico</th>
-                        <th>Herramientas</th>
+                        <th sec:authorize="hasRole('ROLE_ADMIN')" >Herramientas</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="estudiante : ${estudiantes}">
+                        <td class="table-success" th:text="${estudiante.id}">id</td>
                         <td class="table-success" th:text="${estudiante.nombre}">Proveedor</td>
                         <td class="table-success" th:text="${estudiante.apellido}">Número</td>
                         <td class="table-success" th:text="${estudiante.email}">Correo electrónico</td>
-                        <td class="table-success">
-                            <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
-                            <a th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
+                        <td sec:authorize="hasRole('ROLE_ADMIN')" class="table-success">
+                            <a  th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-info">Editar</a>
+                            <a  th:href="@{/estudiantes/{id}(id=${estudiante.id})}" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <header th:replace="plantilla/template::footer"></header>
     </body>
 </html>
