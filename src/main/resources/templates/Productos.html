@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
 
     <head>
         <title>Productos</title>
@@ -43,9 +44,8 @@
                                        class="btn btn-primary" th:text="#{producto.detalle}"></a>
 
 
-                                    <a th:href="@{/carrito/agregar/}+${products.idProducto}"
-                                       class="btn btn-success">
-                                        <button class="btn btn-success" th:text="#{producto.agregar}"></button>
+                                    <a th:href="@{/carrito/agregar/}+${products.idProducto}" 
+                                       th:text="#{producto.agregar}" class="btn btn-success">
                                     </a>
 
                                 </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="m-0 row justify-content-center">
+        <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="m-0 row justify-content-center">
             <div class="col-auto p-5 text-center">       
                 <a class="btn btn-outline-dark" href="/productosNuevo" 
                    role="button" th:text="#{producto.nuevo}"></a>
@@ -67,7 +67,7 @@
                    role="button" th:text="#{producto.admin}"></a>
             </div>
         </div>
-
+        <br>
         <footer th:replace="plantilla/template::footer"></footer>
 
     </body>

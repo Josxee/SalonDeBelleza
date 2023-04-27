@@ -58,7 +58,7 @@ public class UsuarioController {
         return "redirect:/usuarios";
     }
 
-    @GetMapping("/editUsuario/{idUsuario}")
+    @GetMapping("/editUsuario{idUsuario}")
     public String editarUsuario(@PathVariable("idUsuario") Long idUsuario, Model model) {
         Usuario usuario = usuarioService.getUsuarioByID(idUsuario);
         model.addAttribute("users", usuario);

@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 
                 //ADMIN SECURITY
                 .antMatchers("/administradores", "/adminN", "/usuarios", "/usuarioN",
-                        "/FaqNuevo","/FaqAdmin")
+                        "/FaqNuevo","/FaqAdmin", "/productosAdmin", "/productosNuevo")
                 .hasRole("ADMIN")
                 //CLIENTE SECURITY
                 .antMatchers("/comentarios")

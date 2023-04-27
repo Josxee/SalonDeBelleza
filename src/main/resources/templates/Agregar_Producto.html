@@ -32,28 +32,28 @@
                             <input type="hidden" th:field="*{idProducto}">
 
                             <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="nombreProducto">Nombre</label>                            
+                                <label  class="col-md-2 col-form-label" for="nombreProducto" th:text="#{producto.nombre}"></label>                            
                                 <div class="col-sm-10">                                
                                     <input type="text" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{nombreProducto}"  placeholder= "Nombre del producto" 
+                                           th:field="*{nombreProducto}"  th:placeholder= "#{producto.placenombre}" 
                                            id="nombres" aria-describedby="emailHelp" required>                            
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="precioProducto">Precio</label>                            
+                                <label  class="col-md-2 col-form-label" for="precioProducto" th:text="#{producto.precio}"></label>                            
                                 <div class="col-sm-10">                                
                                     <input type="number" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{precioProducto}"  placeholder= "Precio unitario" 
+                                           th:field="*{precioProducto}"  th:placeholder= "#{producto.placeprecio}" 
                                            id="precio" aria-describedby="emailHelp" required>                            
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="descripcionProducto">Descripción</label>                            
+                                <label  class="col-md-2 col-form-label" for="descripcionProducto" th:text="#{producto.descripcion}"></label>                            
                                 <div class="col-sm-10">                                
                                     <input type="text" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{descripcionProducto}"  placeholder= "Descripcion del producto" 
+                                           th:field="*{descripcionProducto}"  th:placeholder= "#{producto.placedes}" 
                                            id="descripcion" aria-describedby="emailHelp" required>                            
                                 </div>
                             </div>
@@ -62,13 +62,13 @@
                                 <label  class="col-md-2 col-form-label" for="stock">Stock</label>                            
                                 <div class="col-sm-10">                                
                                     <input type="number" class="form-control form-control-sm col-md-6" 
-                                           th:field="*{stock}"  placeholder= "Stock del producto" 
+                                           th:field="*{stock}"  placeholder= "Stock" 
                                            id="stock" aria-describedby="emailHelp" required>                            
                                 </div>
                             </div>
 
                             <div class="form-group mb-3 row">
-                                <label  class="col-md-2 col-form-label" for="imagenProducto">Imagen</label>  
+                                <label  class="col-md-2 col-form-label" for="imagenProducto" th:text="#{producto.imagen}"></label>  
                                 <div class="col-sm-10"> 
                                     <input type="file" class="form-control form-control-sm col-md-6" 
                                            name="file" 
@@ -85,8 +85,8 @@
                             <div class="alert alert-primary d-flex align-items-center" role="alert">
                                 <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
                                 <div style="margin-left: 5vh;">
-                                    <li>Tipo de archivo: png</li>
-                                    <li>Nombre de archivo alusivo al nuevo producto</li>
+                                    <li th:text="#{producto.indicacionn1}">Tipo de archivo: png</li>
+                                    <li th:text="#{producto.indicacion2}">Nombre de archivo alusivo al nuevo producto</li>
                                 </div>
                             </div>
 
