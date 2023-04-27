@@ -51,7 +51,9 @@
                     width: 150px;
                     height: 150px;
                     margin-right: 20px;
-                    background-image: url('https://via.placeholder.com/150');
+                    
+                    background-image: url('../images/logo-blanco.png');
+                    background-color:grey;
                     background-size: cover;
                 }
                 .company-info {
@@ -72,10 +74,10 @@
         <div class="container">
             <div class="logo"></div>
             <div class="company-info">
-                <h2>Nombre de la empresa</h2>
-                <p>Dirección: 123 Calle Falsa</p>
-                <p>Teléfono: 555-555-5555</p>
-                <p>Correo electrónico: info@empresa.com</p>
+                <h2>Utopía Beauty Salón</h2>
+                <p>Sucursal Principal</p>
+                <p>Teléfono: 8479-3541</p>
+                <p>Correo electrónico: utopiabs@empresa.com</p>
             </div>
             <table>
                 <thead>
@@ -90,10 +92,10 @@
                 <tbody>
                     <tr th:each="item, contador : ${items}">
                         <td>[[${contador.count}]]</td>
-                        <td>[[${item.descripcion}]]</td>
-                        <td class="text-end">[[${item.precio}]]</td>
-                        <td class="text-center">[[${item.cantidad}]]</td>
-                        <td class="text-center">[[${item.cantidad*item.precio}]]</td>
+                        <td>[[${item.descripcionProducto}]]</td>
+                        <td class="text-end">[[${item.precioProducto}]]</td>
+                        <td class="text-center">[[${item.stock}]]</td>
+                        <td class="text-center">[[${item.cantidad*item.precioProducto}]]</td>
                     </tr>
                     <tr>
                         <td colspan="4" class="total text-right">Total:</td>
@@ -101,7 +103,7 @@
                     </tr>
                 </tbody>
             </table>
-            <a href="/carrito/checkin" class="btn btn-primary">Volver a PokeStore</a>
+            <a href="/carrito/checkin" class="btn btn-primary">Volver al Salon Virtual</a>
 
 
         </div>

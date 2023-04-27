@@ -35,9 +35,11 @@
                             </ul>
 
                             <div class="col-auto bg-white p-1 text-center">
-                                <button type="submit" class="btn btn-dark" th:text="#{producto.agregar}"></button>
+                                <a th:href="@{/carrito/agregar/}+${products.idProducto}" 
+                                   th:text="#{producto.agregar}" class="btn btn-dark">
+                                </a>
                             </div>
-
+                            
                         </div>
                     </th:block>
                 </div>
