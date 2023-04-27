@@ -6,59 +6,79 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
         <title>Sucursales</title>
-        <link rel="stylesheet" href="src/main/resources/static/css/Sucursales.css> 
-
-              <meta charset="UTF-8">
+        <link rel="stylesheet" href="src/main/resources/static/css/Sucursales.css"> 
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <header th:replace="plantilla/template::header"></header>
-        <div class="titulo">
-            <h1>SUCURSALES</h1>
+    <header th:replace="plantilla/template2::utils"></header>
+
+</head>
+<body>
+    <header th:replace="plantilla/template::header"></header>
+    <div class="titulo">
+        <br><br><h1 style="text-align: center">SUCURSALES</h1>
+    </div>
+    <main>
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="../images/Sucursal1.png" alt="Imagen Sucursal1">
+                            <div class="card-body">
+                                <h4>Sede Alajuela</h4>
+                                <p class="card-text">Alajuela, Plaza Real Alajuela
+                                    <br>Teléfono: 8432-9135</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-success" href="/Sucursal1" role="button">Ver</a>
+                                    </div>
+                                    <small class="text-muted">Horario: L-V 8:00AM - 5:00PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- // -->
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="../images/Sucursal2.png" alt="Imagen Sucursal2">
+                            <div class="card-body">
+                                <h4>Sede Heredia</h4>
+                                <p class="card-text">La Aurora, Universidad Fidélitas Heredia
+                                    <br>Teléfono: 8802-9999</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-success" href="/Sucursal2" role="button">Ver</a>
+                                    </div>
+                                    <small class="text-muted">Horario: L-V 8:00AM - 5:00PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="images/Sucursal3.jpg" alt="Imagen Sucursal3">
+                            <div class="card-body">
+                                <h4>Sede Limón</h4>
+                                <p class="card-text">Limón, Puerto Viejo MultiCentro
+                                    <br>Teléfono: 7089-7654</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-success" href="/Sucursal3" role="button">Ver</a>
+                                    </div>
+                                    <small class="text-muted">Horario: L-V 8:00AM - 5:00PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <main>
-            <article>
-                <figure>
-                    <img src="../images/Sucursal1.png" alt="Sucursal_1"> 
-                    <div class="info">
-                        <h1>ALAJUELA</h1>
-                        <p>Alajuela, Plaza Real Alajuela</p>
-                        <p>Telefono: 8802-9999</p>
-                        <button>
-                            <a href="/SucursalAlajuela.html">VER MÁS</a>
-                        </button>
-                    </div>
-                </figure>
-            </article>
-            <article>
-                <figure>
-                    <img src="../images/Sucursal2.png" alt="Sucursal_2">
-                    <div class="info">
-                        <h1>FIDELITAS HEREDIA</h1>
-                        <p>La Aurora, Universidad Fidélitas Heredia</p>
-                        <p>Telefono: 8802-9999</p>
-                        <button>
-                            <a href="/SucursalFidelitasHeredia.html">VER MÁS</a>
-                        </button>
-                    </div>
-                </figure>
-            </article>
-            <article>
-                <figure>
-                    <img src="../images/Sucursal3.jpg" alt="Sucursal_3">
-                    <div class="info">
-                        <h1>LIMÓN</h1>
-                        <p>Limón, Puerto Viejo MultiCentro</p>
-                        <p>Telefono: 8802-9999</p>
-                        <button>
-                            <a href="/SucursalLimon.html">VER MÁS</a>
-                        </button>
-                    </div>
-                </figure>
-            </article>
-        </main>
-    </body>
-    <footer th:replace="plantilla/template::footer"></footer>
+    </main>
+</body>
+<footer th:replace="plantilla/template::footer"></footer>
 </html>
 
