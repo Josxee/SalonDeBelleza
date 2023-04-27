@@ -57,7 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 
                 //ADMIN SECURITY
-                .antMatchers("/administradores", "/adminN", "/usuarios", "/usuarioN")
+                .antMatchers("/administradores", "/adminN", "/usuarios", "/usuarioN",
+                        "/FaqNuevo","/FaqAdmin")
                 .hasRole("ADMIN")
                 //CLIENTE SECURITY
                 .antMatchers("/comentarios")
@@ -70,5 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/");
+        
+        
     }
 }

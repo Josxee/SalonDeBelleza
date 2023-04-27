@@ -1,5 +1,7 @@
 
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    
     <head>
 
         <link rel="stylesheet" href="css/FAQ.css"/>
@@ -43,17 +45,17 @@
                 </div>
             </div>
         </section>
+        <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="m-0 row justify-content-center">
         
-        <div class="m-0 row justify-content-center">
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/FaqNuevo" role="button">Agregar FAQ</a>
+                <a class="btn btn-outline-dark" href="/FaqNuevo" role="button" th:text="#{faq.crear}"></a>
             </div>
 
             <div class="col-auto p-5 text-center">       
-                <a class="btn btn-outline-dark" href="/FaqAdmin" role="button">Tabla de FAQ</a>
+                <a class="btn btn-outline-dark" href="/FaqAdmin" role="button" th:text="#{faq.admin}"></a>
             </div>
+       
         </div>
-        
         <footer th:replace="plantilla/template::footer"></footer>
     </body>
 </html>

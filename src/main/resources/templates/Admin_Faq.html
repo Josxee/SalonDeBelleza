@@ -20,10 +20,10 @@
             <table class="table table-dark table-striped">
                 <thead class="thead-warning">
                     <tr>                   
-                        <th>Pregunta</th>                
-                        <th>Descripción</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th th:text="#{faq.pregunta}"></th>                
+                        <th th:text="#{faq.descripcion}"></th>
+                        <th th:text="#{accion.actualizar}"></th>
+                        <th th:text="#{accion.eliminar}"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,9 +55,9 @@
                 </tbody>
             </table>
         </div>
-
+         <div sec:authorize="hasAnyRole('ROLE_ADMIN')" class="m-0 row justify-content-center">
         <div class="col-auto bg-white p-1 text-center">
-            <a class="btn btn-outline-dark" href="/faqNuevo" role="button">Agregar FAQ</a>
+            <a class="btn btn-outline-dark" href="/faqNuevo" role="button"  th:text="#{faq.admin}"></a>
         </div>
         <br>
 

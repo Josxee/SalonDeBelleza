@@ -30,18 +30,18 @@
                                                     <input type="hidden" th:field="*{ID_faq}">
 
                                                         <div class="form-group mb-3 row">
-                                                            <label  class="col-md-2 col-form-label" for="pregunta">Pregunta</label>                            
+                                                            <label  class="col-md-2 col-form-label" for="pregunta"th:text="#{faq.pregunta}" ></label>                            
                                                             <div class="col-sm-10">                                
                                                                 <input type="text" class="form-control form-control-sm col-md-6" 
-                                                                       th:field="*{pregunta}"  placeholder= "pregunta" 
+                                                                       th:field="*{pregunta}" th:placeholder="#{faq.pregunta}"  
                                                                        id="pregunta" aria-describedby="emailHelp" required>                            
                                                             </div>
                                                         </div>
                                                         <div class="form-group mb-3 row">
-                                                            <label  class="col-md-2 col-form-label" for="descripcion">descripcion</label>                            
+                                                            <label  class="col-md-2 col-form-label" for="descripcion" th:text="#{faq.descripcion}"></label>                            
                                                             <div class="col-sm-10">                                
                                                                 <input type="text" class="form-control form-control-sm col-md-6" 
-                                                                       th:field="*{descripcion}"  placeholder= "descripcion" 
+                                                                       th:field="*{descripcion}"   th:placeholder="#{faq.descripcion}"
                                                                        id="descripcion" aria-describedby="emailHelp" required>                            
                                                             </div>
                                                         </div>
