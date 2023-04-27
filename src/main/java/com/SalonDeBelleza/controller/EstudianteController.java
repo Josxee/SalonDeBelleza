@@ -23,6 +23,7 @@ public class EstudianteController {
     public String listarEstudiantes(Model modelo) {
         modelo.addAttribute("estudiantes", servicio.listarTodosLosEstudiantes());
         return "estudiantes"; 
+        
     }
     
     @GetMapping("/estudiantes/nuevo")
