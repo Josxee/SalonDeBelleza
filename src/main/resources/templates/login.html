@@ -41,16 +41,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </h1>
                     <div style="height: 30px;"></div>
                 </div>
+                
                 <label for="txtUsername">Correo Electronico:</label><br>
                 <input id="username" name="username" type="text" required><br>
                 <div style="height: 30px;"></div>
                 <label for="txtPassword">Contraseña:</label><br>
                 <input type="password" id="password" name="password"required><br>
+                
+                <div th:if="${param.error}" class="alert alert-danger text-warning" >
+                    Invalid username or password
+                </div>
+                
                 <input style="width: 15px ; height: 13px;"type="checkbox">
                 <label style="font-size: 13px; ">Recordarme</label><br>
                 <div style="height: 30px;"></div>
 
-                    <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                <button type="submit" class="btn btn-success">Iniciar sesión</button>
 
             </form>
         </div>
